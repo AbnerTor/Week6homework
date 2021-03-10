@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Search</label>
+                <input type="email" class="form-control" id="searchCity" aria-describedby="emailHelp">
+            </div>
+            
+            <button type="submit" class="btn btn-primary" id="searchButton">Search</button>
+        </form>
+        <div id="displayCity"></div>
+        <div id="displayTemp"></div>
+        <div id="displayHumidity"></div>
+        <div id="displayWind"></div>
+        <div id="displayUV"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="assets/javascript.js"></script>
+</body>
+
+</html>
