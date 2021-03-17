@@ -101,7 +101,7 @@ function searchForecast(city) {
 
 function getUV(coord1, coord2) {
     $.ajax({
-        url: "http://api.openweathermap.org/data/2.5/uvi?lat=" + coord1 + "&lon=" + coord2 + "&appid=edbd8869685693227fe9f341c0e16b4a",
+        url: "https://api.openweathermap.org/data/2.5/uvi?lat=" + coord1 + "&lon=" + coord2 + "&appid=edbd8869685693227fe9f341c0e16b4a",
         method: "GET",
     })
 
