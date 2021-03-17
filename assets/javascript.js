@@ -39,7 +39,7 @@ function searchWheather(city) {
 
 function searchForecast(city) {
     $.ajax({
-        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=6d488e833fc2d8238e17e4d9e7dd8667",
+        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=edbd8869685693227fe9f341c0e16b4a",
         method: "GET",
     })
 
