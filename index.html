@@ -9,24 +9,80 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 
 </head>
 
 <body>
-    <div class="container">
-        <form>
-            <div class="mb-3">
+    <header>This is the Weather API</header>
+
+    <div class="container d-flex p-2 col-md4">
+        <form id="searchArea" class="">
+            <div class="m-4">
                 <label for="exampleInputEmail1" class="form-label">Search</label>
                 <input type="email" class="form-control" id="searchCity" aria-describedby="emailHelp">
             </div>
+
+            <button type="submit" class="btn btn-primary m-4" id="searchButton">Search</button>
+            <button type="reset" class="btn btn-primary m-4" id="clearButton">Clear</button>
             
-            <button type="submit" class="btn btn-primary" id="searchButton">Search</button>
+
+            <div id="citylist" class="d-flex flex-column"></div>
         </form>
-        <div id="displayCity"></div>
-        <div id="displayTemp"></div>
-        <div id="displayHumidity"></div>
-        <div id="displayWind"></div>
-        <div id="displayUV"></div>
+
+        <div id="resultsArea" class="d-flex col-md-8 row">
+
+            <div class="row" id="resultRenders">
+                <div id="displayCity"></div>
+                <div id="displayTemp"></div>
+                <div id="displayHumidity"></div>
+                <div id="displayWind"></div>
+                <div id="displayUV"></div>
+            </div>
+
+            <div id="forecastArea" class="row">
+                <h2>5 Day Forecast</h2>
+
+                <div id="forecastContainer" class="">
+
+                    <div id="dayOne">
+                        <h3 id="futureDate-1"></h3>
+                        <div id="emoji-1"></div>
+                        <div id="temp1"></div>
+                        <div id="humidity1"></div>
+                    </div>
+
+                    <div id="dayTwo">
+                        <h3 id="futureDate-2"></h3>
+                        <div id="emoji-2"></div>
+                        <div id="temp2"></div>
+                        <div id="humidity2"></div>
+                    </div>
+
+                    <div id="dayThree">
+                        <h3 id="futureDate-2"></h3>
+                        <div id="emoji-3"></div>
+                        <div id="temp3"></div>
+                        <div id="humidity3"></div>
+                    </div>
+
+                    <div id="dayFour">
+                        <h3 id="futureDate-4"></h3>
+                        <div id="emoji-4"></div>
+                        <div id="temp4"></div>
+                        <div id="humidity4"></div>
+                    </div>
+
+                    <div id="dayFive">
+                        <h3 id="futureDate-5"></h3>
+                        <div id="emoji-5"></div>
+                        <div id="temp5"></div>
+                        <div id="humidity5"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="assets/javascript.js"></script>

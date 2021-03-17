@@ -1,0 +1,57 @@
+header {
+    display: flex;
+    justify-content: center;
+    font-size: 55px;
+    background-color:lightslategray;
+    color: white;
+}
+
+body{
+    height:fit-content;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    height: 700px;
+}
+
+#searchArea {
+    border-style: solid;
+    border-color: lightskyblue;
+    height: 700px;
+    margin-right: 30px;
+}
+
+#displayCity {
+    font-size: 50px;
+}
+#displayUV {
+    color: red;
+}
+
+#resultsArea {
+
+}
+ 
+#resultRenders {
+    height: 300px;
+    border-style: solid;
+    border-color: lightskyblue;
+}
+
+#forecastArea {
+    height: 400px;
+    border-style: solid;
+    border-color: lightskyblue;
+}
+#forecastContianer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
