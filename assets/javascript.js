@@ -88,6 +88,15 @@ function searchForecast(city) {
             humidityFour.text("Humidity level: " + humidFour)
             humidityFive.text("Humidity level: " + humidFive)
 
+            emojiOne.text(response2.list[2].weather.icon)
+
+            // emoji.text(response2.) 
+            // emoji.text(response2.) 
+            // emoji.text(response2.) 
+            // emoji.text(response2.) 
+            // emoji.text(response2.) 
+            console.log(response2.list[2].weather.icon)
+            console.log(response2)
             console.log(response2.list[2].main.humidity);
             console.log(response2.list[2].main.temp);
             console.log(firstTemp + "test");
