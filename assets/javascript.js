@@ -25,12 +25,12 @@ function searchWheather(city) {
             displayHumidity.text("Humidity: " + response.main.humidity + "%");
             displayWind.text("Wind speed: " + response.wind.speed + " mph");
 
-            // console.log(response)
-            // console.log(response.name)
-            // console.log(response.main.temp)
-            // console.log(response.main.humidity)
-            // console.log(response.wind.speed)
-            // console.log(location)
+            console.log(response)
+            console.log(response.name)
+            console.log(response.main.temp)
+            console.log(response.main.humidity)
+            console.log(response.wind.speed)
+            console.log(location)
 
             getUV(coord1, coord2)
         })
@@ -51,11 +51,11 @@ function searchForecast(city) {
             let fourthTemp = ((response2.list[26].main.temp - 273.15) * 9 / 5 + 32);
             let fifthTemp = ((response2.list[34].main.temp - 273.15) * 9 / 5 + 32);
 
-            let humidOne = response.list[2].main.humidity
-            let humididTwo = response.list[10].main.humidity
-            let humidThree = response.list[18].main.humidity
-            let humidFour = response.list[26].main.humidity
-            let humidFive = response.list[34].main.humidity
+            let humidOne = response2.list[2].main.humidity
+            let humidTwo = response2.list[10].main.humidity
+            let humidThree = response2.list[18].main.humidity
+            let humidFour = response2.list[26].main.humidity
+            let humidFive = response2.list[34].main.humidity
         
            
             let emojiOne = $("#emoji-1")
@@ -88,14 +88,13 @@ function searchForecast(city) {
             humidityFour.text("Humidity level: " + humidFour)
             humidityFive.text("Humidity level: " + humidFive)
 
-            console.log(response2.list[2].main.humidity)
-            console.log(response2.list[2].main.temp)
-            console.log(firstTemp + "test")
-            console.log(secondTemp + "test")
-            console.log(thirdTemp + "test")
-            console.log(fourthTemp + "test")
-            console.log(fifthTemp + "test")
-            console.log(response2)
+            console.log(response2.list[2].main.humidity);
+            console.log(response2.list[2].main.temp);
+            console.log(firstTemp + "test");
+            console.log(secondTemp + "test");
+            console.log(thirdTemp + "test");
+            console.log(fourthTemp + "test");
+            console.log(fifthTemp + "test");
         })
 }
 
@@ -107,7 +106,7 @@ function getUV(coord1, coord2) {
 
         .then(function (response) {
             let displayUV = $("#displayUV")
-            displayUV.text("UV Index: " + response.value)
+            displayUV.text("UV Index: " + response.value);
             console.log(response);
 
         })
@@ -121,26 +120,31 @@ $("#searchButton").on("click", function (e) {
     console.log(cityName);
     searchWheather(cityName);
     searchForecast(cityName);
-    save(cityName)
+    save(cityName);
 })
 
 
 function save(newCity) {
     var cityArray = JSON.parse(localStorage.getItem("cityHistory")) || [];
     cityArray.push(newCity);
-    localStorage.setItem("cityHistory", JSON.stringify(cityArray))
+    localStorage.setItem("cityHistory", JSON.stringify(cityArray));
 }
 
 function renderSearchHistory() {
     let cityArray = JSON.parse(localStorage.getItem("cityHistory")) || [];
     cityArray.forEach(element => {
-        console.log(element);
+        // console.log(element);
         let button = $("<button>");
         button.text(element);
-        button.addClass("btn btn-primary btn-block mb-2 search-historyBtn")
+        button.addClass("btn btn-primary btn-block mb-2 search-historyBtn");
         $("#citylist").append(button);
 
     });
+
+    let clrBtn = $("#clearButton")
+    clrBtn.on("click", () => {
+        $("#cityList").value = ""
+    })
 }
 
 // 
@@ -155,6 +159,7 @@ $(".search-historyBtn").on("click", function (e) {
     searchForecast(btnText);
 })
 
-$("#clearButton").on("click", function(clear) {
-        storage.removeItem(".search-historyBtn")
-    })
+
+
+$("#clearButton").on("click", () => {
+})
