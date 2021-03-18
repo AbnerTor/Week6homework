@@ -140,11 +140,6 @@ function renderSearchHistory() {
         $("#citylist").append(button);
 
     });
-
-    let clrBtn = $("#clearButton")
-    clrBtn.on("click", () => {
-        $("#cityList").value = ""
-    })
 }
 
 // 
